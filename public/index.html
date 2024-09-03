@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Form to JSON</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js"></script>
+
+</head>
+
+<body>
+	<form id="myForm">
+		<input type="text" name="name" placeholder="Name">
+		<input type="email" name="email" placeholder="Email">
+		<input type="text" name="secret-key" placeholder="Secret key to encrypt" pattern=".{16,16}" required
+			title="Secret key must be 16 characters long">
+		<textarea name="message" placeholder="Message"></textarea>
+		<button type="submit">Submit</button>
+	</form>
+	<input type="file">
+	<script type="module" src="../dist/main.js">
+	</script>
+</body>
+
+</html>
