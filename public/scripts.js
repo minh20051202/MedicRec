@@ -1,4 +1,6 @@
 import { encryptData } from "../src/utils/encryptAndDecrypt";
+import { FHIR_CLIENT } from "../src/utils/manageResource";
+
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector("#myForm");
   if (!form) {

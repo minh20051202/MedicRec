@@ -4,23 +4,118 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Form to JSON</title>
+	<title>FHIR Resource Input Forms</title>
+	<link rel="stylesheet" href="styles.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js"></script>
-
 </head>
 
 <body>
-	<form id="myForm">
-		<input type="text" name="name" placeholder="Name">
-		<input type="email" name="email" placeholder="Email">
-		<input type="text" name="secret-key" placeholder="Secret key to encrypt" pattern=".{16,16}" required
-			title="Secret key must be 16 characters long">
-		<textarea name="message" placeholder="Message"></textarea>
-		<button type="submit">Submit</button>
+
+	<!-- Patient Form -->
+	<h2>Patient Information</h2>
+	<form id="patient-form">
+		<label for="patient-id">Patient ID:</label>
+		<input type="text" id="patient-id" required><br><br>
+
+		<label for="patient-name">Name:</label>
+		<input type="text" id="patient-name" required><br><br>
+
+		<label for="patient-gender">Gender:</label>
+		<select id="patient-gender" required>
+			<option value="male">Male</option>
+			<option value="female">Female</option>
+			<option value="other">Other</option>
+		</select><br><br>
+
+		<label for="patient-birthdate">Birthdate:</label>
+		<input type="date" id="patient-birthdate" required><br><br>
+
+		<label for="patient-address">Address:</label>
+		<input type="text" id="patient-address" required><br><br>
+
+		<button type="button" onclick="submitPatient()">Submit Patient</button>
 	</form>
-	<input type="file">
-	<script type="module" src="../dist/main.js">
-	</script>
+
+	<!-- Encounter Form -->
+	<h2>Encounter Information</h2>
+	<form id="encounter-form">
+		<label for="encounter-id">Encounter ID:</label>
+		<input type="text" id="encounter-id" required><br><br>
+
+		<label for="encounter-type">Type:</label>
+		<input type="text" id="encounter-type" required><br><br>
+
+		<label for="encounter-start">Start Time:</label>
+		<input type="datetime-local" id="encounter-start" required><br><br>
+
+		<label for="encounter-end">End Time:</label>
+		<input type="datetime-local" id="encounter-end" required><br><br>
+
+		<label for="encounter-reason">Reason:</label>
+		<input type="text" id="encounter-reason" required><br><br>
+
+		<button type="button" onclick="submitEncounter()">Submit Encounter</button>
+	</form>
+
+	<!-- Observation Form -->
+	<h2>Observation Information</h2>
+	<form id="observation-form">
+		<label for="observation-id">Observation ID:</label>
+		<input type="text" id="observation-id" required><br><br>
+
+		<label for="observation-code">Observation Code:</label>
+		<input type="text" id="observation-code" required><br><br>
+
+		<label for="observation-value">Value:</label>
+		<input type="text" id="observation-value" required><br><br>
+
+		<label for="observation-unit">Unit:</label>
+		<input type="text" id="observation-unit" required><br><br>
+
+		<button type="button" onclick="submitObservation()">Submit Observation</button>
+	</form>
+
+	<!-- Coverage Form -->
+	<h2>Coverage Information</h2>
+	<form id="coverage-form">
+		<label for="coverage-id">Coverage ID:</label>
+		<input type="text" id="coverage-id" required><br><br>
+
+		<label for="coverage-type">Coverage Type:</label>
+		<input type="text" id="coverage-type" required><br><br>
+
+		<label for="coverage-subscriber">Subscriber ID:</label>
+		<input type="text" id="coverage-subscriber" required><br><br>
+
+		<label for="coverage-payor">Payor:</label>
+		<input type="text" id="coverage-payor" required><br><br>
+
+		<button type="button" onclick="submitCoverage()">Submit Coverage</button>
+	</form>
+
+	<!-- MedicationStatement Form -->
+	<h2>Medication Statement Information</h2>
+	<form id="medication-form">
+		<label for="medication-id">Medication Statement ID:</label>
+		<input type="text" id="medication-id" required><br><br>
+
+		<label for="medication-name">Medication Name:</label>
+		<input type="text" id="medication-name" required><br><br>
+
+		<label for="medication-dosage">Dosage:</label>
+		<input type="text" id="medication-dosage" required><br><br>
+
+		<label for="medication-frequency">Frequency:</label>
+		<input type="text" id="medication-frequency" required><br><br>
+
+		<button type="button" onclick="submitMedication()">Submit Medication</button>
+	</form>
+
+	<!-- Result Section -->
+	<h3>Response</h3>
+	<pre id="response-output"></pre>
+
+	<script type="module" src="../dist/main.js"></script>
 </body>
 
 </html>
