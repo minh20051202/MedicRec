@@ -6,17 +6,28 @@
     <title>Hospital Website</title>
 </head>
 <body style="font-family: Arial, sans-serif; margin: 0; padding: 0; box-sizing: border-box;">
-    <header style="background-color: aquamarine; padding: 20px 0; text-align: center;">
-        <h1 style="margin: 0; font-size: 2.5rem;">Hospital</h1>
-        
-        <nav style="margin-top: 10px;">
+    <header style="background-color: aquamarine; padding: 20px 0; display: flex; align-items: center; justify-content: space-between;">
+        <div style="display: flex; align-items: center; text-align: center; flex-grow: 1;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/LogoUTC.jpg/640px-LogoUTC.jpg" alt="Hospital Logo" style="height: 60px;border-radius: 30px; margin-right: 10px;"> 
+            <h1 style="margin: 0; font-size: 2.5rem;">Hospital</h1>
+        </div>
+    
+        <nav style="margin-top: 10px; flex-grow: 2; text-align: center;">
             <a href="home.html" style="text-decoration: none; color: black; font-weight: bold; margin: 0 15px; transition: color 0.3s;">Home</a>
             <a href="Service.html" style="text-decoration: none; color: black; font-weight: bold; margin: 0 15px; transition: color 0.3s;">Service</a>
             <a href="Facilities.html" style="text-decoration: none; color: black; font-weight: bold; margin: 0 15px; transition: color 0.3s;">Facilities</a>
             <a href="Specialties.html" style="text-decoration: none; color: black; font-weight: bold; margin: 0 15px; transition: color 0.3s;">Specialties</a>
             <a href="Contact.html" style="text-decoration: none; color: black; font-weight: bold; margin: 0 15px; transition: color 0.3s;">Contact</a>
         </nav>
+    
+        <div style="flex-grow: 1; text-align: right; padding-right: 20px;">
+            <input type="text" placeholder="Search..." style="padding: 5px; border: 1px solid #ccc; border-radius: 5px; margin-right: 10px;">
+            <button style="padding: 5px 10px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">Search</button>
+            <a href="login.html" style="text-decoration: none; color: black; font-weight: bold; margin-left: 15px; transition: color 0.3s;">Login</a>
+            <a href="register.html" style="text-decoration: none; color: black; font-weight: bold; margin-left: 15px; transition: color 0.3s;">Register</a>
+        </div>
     </header>
+    
     
     <main style="padding: 20px;">
         <div class="banner" style="display: flex; justify-content: center; align-items: center; height: 700px ; background: url('https://img.freepik.com/free-vector/healthcare-medical-science-elegant-background_1017-26358.jpg?t=st=1725765274~exp=1725768874~hmac=cdce7210a2d6c709b5cc06cd6016a1c6e045a1aaa9939805f9690d4e5cf79319&w=1060') no-repeat center center/cover; color: white; text-align: center;">
@@ -48,9 +59,80 @@
                 <h3 style="margin-top: 0; color: #00796b;">Chăm sóc sau điều trị</h3>
                 <p style="color: #555;">Dịch vụ chăm sóc và theo dõi sau điều trị để đảm bảo sức khỏe của bệnh nhân được phục hồi tốt nhất.</p>
             </div>
-            
         </section>
 
+        <section style="padding: 20px; background-color: #ffffff; margin-top: 20px;">
+            <h2 style="color: #00796b;">Về Chúng Tôi</h2>
+            <p style="color: #555;">Bệnh viện của chúng tôi được thành lập vào năm 2024, với sứ mệnh mang đến dịch vụ chăm sóc sức khỏe chất lượng cao cho cộng đồng.</p>
+        </section>
+        
+        <section style="padding: 20px; background-color: #ffffff; margin-top: 20px;">
+            <h2 style="color: #00796b;">Tin Tức</h2>
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 10px;"><a href="#" style="color: #00796b; text-decoration: none;">Bệnh viện triển khai chương trình khám sức khỏe miễn phí cho người cao tuổi</a></li>
+                <li style="margin-bottom: 10px;"><a href="#" style="color: #00796b; text-decoration: none;">Cập nhật công nghệ điều trị ung thư tiên tiến</a></li>
+            </ul>
+        </section>
+        
+        <section style="padding: 20px; background-color: #e0f7fa; margin-top: 20px;">
+            <h2 style="color: #00796b;">Đội Ngũ Bác Sĩ</h2>
+            <div style="display: flex; gap: 20px;">
+                <div style="flex: 1; text-align: center;">
+                    <img src="https://lh6.googleusercontent.com/_cyRfJT_nqu1_fES4XZZvy5A9h3ihjslaf1U83UHNK5Wx5w6cI_u-wMSj1Gi64DvYZx-ScKrAHwLZvc3LIFGT-cvi1ojFMY_YWCp3ONhhK5vTYCYWsBwie6guZis9cR4MhbZ4NjBJ6GZy6qgXupwWWE" alt="Bác sĩ A" style="width: 100px; border-radius: 50%;">
+                    <h4 style="color: #00796b;">Bác sĩ A</h4>
+                    <p style="color: #555;">Chuyên khoa Nội</p>
+                </div>
+                <div style="flex: 1; text-align: center;">
+                    <img src="https://i1.wp.com/funplus.vn/wp-content/uploads/2024/02/hinh-anh-cac-y-bac-si-tuoi-cuoi-cam-gay-bong-chay-10d4aaa3a64a669b3964047cb62ed4a4.jpg?w=640&resize=640,415.jpg" alt="Bác sĩ B" style="width: 100px; border-radius: 50%;">
+                    <h4 style="color: #00796b;">Bác sĩ B</h4>
+                    <p style="color: #555;">Chuyên khoa Ngoại</p>
+                </div>
+            </div>
+        </section>
+
+        <section style="padding: 20px; background-color: #f2f2f2; margin-top: 20px;">
+            <h2 style="color: #00796b;">Đặt Lịch Hẹn</h2>
+            <form style="display: flex; flex-direction: column; gap: 10px;">
+                <input type="text" placeholder="Tên của bạn" style="padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                <input type="email" placeholder="Email" style="padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                <input type="date" style="padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                <button type="submit" style="padding: 10px; background-color: #00796b; color: white; border: none; border-radius: 4px; cursor: pointer;">Đặt Lịch</button>
+            </form>
+        </section>
+        
+        <section style="padding: 20px; background-color: #e8f5e9; margin-top: 20px;">
+            <h2 style="color: #00796b;">Câu Hỏi Thường Gặp</h2>
+            <details style="margin-bottom: 10px;">
+                <summary style="cursor: pointer; color: #00796b;">Làm thế nào để đặt lịch khám?</summary>
+                <p style="color: #555; margin-top: 5px;">Bạn có thể đặt lịch khám qua trang web hoặc gọi trực tiếp tới số hotline của bệnh viện.</p>
+            </details>
+            <details style="margin-bottom: 10px;">
+                <summary style="cursor: pointer; color: #00796b;">Bệnh viện có dịch vụ khám chữa bệnh từ xa không?</summary>
+                <p style="color: #555; margin-top: 5px;">Chúng tôi cung cấp dịch vụ khám chữa bệnh từ xa qua hệ thống trực tuyến.</p>
+            </details>
+            <details style="margin-bottom: 10px;">
+                <summary style="cursor: pointer; color: #00796b;">Làm thế nào để đặt lịch khám?</summary>
+                <p style="color: #555; margin-top: 5px;">Bạn có thể đặt lịch khám qua trang web của chúng tôi, gọi đến số hotline hoặc đến trực tiếp quầy lễ tân tại bệnh viện để được hỗ trợ.</p>
+            </details>
+            <details>
+                <summary style="cursor: pointer; color: #00796b;">Bệnh viện có dịch vụ khám chữa bệnh từ xa không?</summary>
+                <p style="color: #555; margin-top: 5px;">Chúng tôi cung cấp dịch vụ khám chữa bệnh từ xa qua hệ thống trực tuyến, giúp bệnh nhân nhận tư vấn và điều trị mà không cần phải đến trực tiếp bệnh viện.</p>
+            </details>
+            <details style="margin-bottom: 10px;">
+                <summary style="cursor: pointer; color: #00796b;">Chi phí khám chữa bệnh tại bệnh viện như thế nào?</summary>
+                <p style="color: #555; margin-top: 5px;">Chi phí khám chữa bệnh sẽ phụ thuộc vào dịch vụ và loại hình điều trị. Chúng tôi cam kết minh bạch trong chi phí và cung cấp các gói khám chữa bệnh phù hợp với từng nhu cầu.</p>
+            </details>
+            <details style="margin-bottom: 10px;">
+                <summary style="cursor: pointer; color: #00796b;">Bệnh viện có tiếp nhận bảo hiểm y tế không?</summary>
+                <p style="color: #555; margin-top: 5px;">Bệnh viện tiếp nhận đa dạng các loại bảo hiểm y tế, bao gồm bảo hiểm y tế quốc gia và bảo hiểm y tế tư nhân. Quý khách vui lòng mang theo thẻ bảo hiểm khi đến khám.</p>
+            </details>
+            <details style="margin-bottom: 10px;">
+                <summary style="cursor: pointer; color: #00796b;">Làm thế nào để lấy kết quả xét nghiệm?</summary>
+                <p style="color: #555; margin-top: 5px;">Kết quả xét nghiệm có thể được nhận trực tiếp tại bệnh viện hoặc qua email nếu quý khách đã đăng ký dịch vụ nhận kết quả trực tuyến. Thời gian trả kết quả sẽ phụ thuộc vào loại xét nghiệm.</p>
+            </details>
+        </section>
+        
+        
     </main>
 
     <footer style="background-color: antiquewhite; height: 60px; display: flex; justify-content: center; align-items: center;">
