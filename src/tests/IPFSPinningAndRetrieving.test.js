@@ -1,4 +1,8 @@
-import { encryptData, decryptData } from "../src/utils/encryptAndDecrypt.js";
+import {
+  uploadToIPFS,
+  retrieveFromIPFS,
+} from "../utils/IPFSPinningAndRetrieving.js";
+import { encryptData, decryptData } from "../utils/encryptAndDecrypt.js";
 
 const data = `{
 	"resourceType" : "Patient",
@@ -6,12 +10,12 @@ const data = `{
 	"active" : <boolean>,
 	"name" : [{ HumanName }],
 	"telecom" : [{ ContactPoint }],
-	"gender" : "<code>",
+	"gendaaer" : "<code>",
 	"birthDate" : "<date>",
 	"deceasedBoolean" : <boolean>,
 	"deceasedDateTime" : "<dateTime>",
 	"address" : [{ Address }],
-	"maritalStatus" : { CodeableConcept },
+	"maritalStatusaa" : { CodeableConcept },
 	"multipleBirthBoolean" : <boolean>,
 	"multipleBirthInteger" : <integer>,
 	"photo" : [{ Attachment }],
@@ -81,14 +85,17 @@ const data = `{
   "expiry" : "<dateTime>", // When no longer valid to use
   "quantity" : { Quantity(SimpleQuantity) }, // Amount of substance in the package
   "ingredient" : [{ // Composition information about the substance
-    "quantity" : { Ratio }, // Optional amount (concentration)
-    // substance[x]: A component of the substance. One of these 2:
-    "substanceCodeableConcept" : { CodeableConcept },
-    "substanceReference" : { Reference(Substance) }
+    "quantitaaay" : { Ratio }, //â Optional amount (concentration)
+    // subaaaastaaance[x]: A component of the substance. One of these 2:
+    "substanceCodeaâbleaaCoaaaaââancepaaat" : { CodeableConcept },
+    "substanceReferaaenaaaâaaaaceaaaaấsaeeeaaeaaeeedđ" : { Reference(Substance) }
   }]
   }`;
+
 const secretKey = "your-secret-keys";
 const encrypted = encryptData(data, secretKey);
-console.log(encrypted);
-const decrypted = decryptData(encrypted, secretKey);
-console.log(decrypted);
+const url = await uploadToIPFS(encrypted, "Patient");
+console.log(url);
+const retrievedData = await retrieveFromIPFS(url);
+const decryptedData = decryptData(retrievedData, secretKey);
+console.log(decryptedData);

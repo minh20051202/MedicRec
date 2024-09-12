@@ -16,16 +16,25 @@ async function uploadToIPFS(encryptedResourceData, resourceType) {
       }
     );
     const upload = await pinata.upload.file(file);
-    console.log("Your resource CID is: ", upload.cid);
+    const url = await pinata.gateways.createSignedURL({
+      cid: upload.cid,
+      expires: 999999999999999,
+    });
+    return url;
   } catch (error) {
     console.log(error);
   }
 }
 
-async function retrieveFromIPFS(cid) {
+async function retrieveFromIPFS(signedURL) {
   try {
-    const data = await pinata.gateways.get(`${cid}`);
-    console.log(data);
+    const response = await fetch(`${signedURL}`);
+
+    if (!response.ok) {
+      throw new Error(`Error fetching data: ${response.statusText}`);
+    }
+    const retrievedData = await response.text();
+    return retrievedData;
   } catch (error) {
     console.log(error);
   }
