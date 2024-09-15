@@ -5,6 +5,8 @@
   },
   "devDependencies": {
     "@types/crypto-js": "^4.2.2",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.19.1",
     "webpack": "^5.94.0",
     "webpack-cli": "^5.1.4"
   },

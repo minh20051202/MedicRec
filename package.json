@@ -1,17 +1,27 @@
 {
   "dependencies": {
     "@aiken-lang/aiken": "^1.1.0",
-    "@meshsdk/core": "^1.7.3",
-    "@meshsdk/react": "^1.7.3",
+    "@hookform/resolvers": "^3.9.0",
+    "@meshsdk/common": "^1.7.6",
+    "@meshsdk/contracts": "^1.0.1",
+    "@meshsdk/core": "^1.5.25",
+    "@meshsdk/core-csl": "^1.7.6",
+    "@meshsdk/core-cst": "^1.7.6",
+    "@meshsdk/react": "^1.1.12",
     "@pinata/sdk": "^2.1.0",
+    "@trpc/client": "^11.0.0-rc.502",
+    "@trpc/next": "^11.0.0-rc.502",
+    "cbor": "^9.0.2",
     "crypto-js": "^4.2.0",
     "dotenv": "^16.4.5",
     "form-data": "^4.0.0",
-    "pinata": "^1.1.0"
+    "pinata": "^1.1.0",
+    "react": "^18.3.1",
+    "superjson": "^2.2.1",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@types/crypto-js": "^4.2.2",
-    "ts-node": "^10.9.2",
     "tsx": "^4.19.0"
   }
 }
