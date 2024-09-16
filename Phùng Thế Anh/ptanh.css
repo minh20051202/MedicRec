@@ -115,8 +115,18 @@ button:hover {
     background-color: darkcyan; 
     color: white; 
     transform: scale(1.05); 
+}
 
 button:active {
     background-color: teal; 
     transform: scale(0.95); 
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
