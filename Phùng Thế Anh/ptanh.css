@@ -115,6 +115,7 @@ button:hover {
     background-color: darkcyan; 
     color: white; 
     transform: scale(1.05); 
+}
 
 button:active {
     background-color: teal; 
