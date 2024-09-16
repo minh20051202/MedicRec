@@ -1,7 +1,7 @@
 {
   "preamble": {
-    "title": "nikhils9/cip68-nfts",
-    "description": "Aiken contracts for project 'nikhils9/cip68-nfts'",
+    "title": "MedicRec/cip68-nfts",
+    "description": "Aiken contracts for project 'MedicRec/cip68-nfts'",
     "version": "0.0.0",
     "plutusVersion": "v2",
     "license": "Apache-2.0"

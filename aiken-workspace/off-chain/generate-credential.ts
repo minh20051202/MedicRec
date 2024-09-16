@@ -1,4 +1,4 @@
-import { generateNewWallet } from "./utils/lucid/utils.js";
+import { generateNewWallet } from "./utils/lucid/utils.ts";
 
 await generateNewWallet("user");
 await generateNewWallet("issuer");

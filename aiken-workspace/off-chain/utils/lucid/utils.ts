@@ -1,10 +1,11 @@
 import {
   APPLIED_VALIDATOR_PATH,
+  BLOCKFROST_API_KEY,
   BLOCKFROST_URL,
   CREDENTIALS_PATH,
   NETWORK,
-} from "../../common/constants.js";
-import { AppliedValidator } from "../../common/types.js";
+} from "../../common/constants.ts";
+import { AppliedValidator } from "../../common/types.ts";
 import {
   addAssets,
   applyDoubleCborEncoding,
@@ -17,7 +18,7 @@ import {
   Provider,
   Script,
   UTxO,
-} from "lucid";
+} from "https://deno.land/x/lucid@0.10.7/mod.ts";
 
 const lucid = await Lucid.new(undefined, NETWORK);
 
@@ -28,7 +29,7 @@ export async function createLucidInstance(
   let defaultNetwork = NETWORK;
   let defaultProvider: Provider = new Blockfrost(
     BLOCKFROST_URL,
-    Deno.env.get("BLOCKFROST_API_KEY")
+    BLOCKFROST_API_KEY
   );
 
   if (provider) {

@@ -1,12 +1,18 @@
-import { Constr, Data, fromText, toUnit, UTxO } from "lucid";
+import {
+  Constr,
+  Data,
+  fromText,
+  toUnit,
+  UTxO,
+} from "https://deno.land/x/lucid@0.10.7/mod.ts";
 import {
   createLucidInstance,
   getAppliedValidator,
   getCredential,
   getUtxoWithAssets,
 } from "../utils/lucid/utils.js";
-import { REFERENCE_TOKEN_LABEL } from "../common/constants.js";
-import { AppliedValidator, MetaDatum } from "../common/types.js";
+import { REFERENCE_TOKEN_LABEL } from "../common/constants.ts";
+import { AppliedValidator, MetaDatum } from "../common/types.ts";
 
 const lucid = await createLucidInstance();
 lucid.selectWalletFromPrivateKey(await getCredential("issuer.sk"));

@@ -1,12 +1,15 @@
 import { PinataSDK } from "pinata";
 import "dotenv/config";
-
+import fetch from "node-fetch";
 const pinata = new PinataSDK({
-  pinataJwt: process.env.PINATA_JWT,
-  pinataGateway: process.env.PINATA_GATEWAY,
+  pinataJwt: process.env.MY_PINATA_JWT,
+  pinataGateway: process.env.MY_PINATA_GATEWAY,
 });
 
-async function uploadToIPFS(encryptedResourceData, resourceType) {
+async function uploadToIPFS(
+  encryptedResourceData: string,
+  resourceType: string
+) {
   try {
     const file = new File(
       [`${encryptedResourceData}`],
@@ -26,7 +29,7 @@ async function uploadToIPFS(encryptedResourceData, resourceType) {
   }
 }
 
-async function retrieveFromIPFS(signedURL) {
+async function retrieveFromIPFS(signedURL: string) {
   try {
     const response = await fetch(`${signedURL}`);
 

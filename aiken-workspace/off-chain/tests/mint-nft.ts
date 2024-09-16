@@ -1,16 +1,23 @@
-import { Constr, Data, fromHex, toHex, toUnit, UTxO } from "lucid";
+import {
+  Constr,
+  Data,
+  fromHex,
+  toHex,
+  toUnit,
+  UTxO,
+} from "https://deno.land/x/lucid@0.10.7/mod.ts";
 import {
   createLucidInstance,
   getCredential,
   getUtxoWithAssets,
-} from "../utils/lucid/utils.js";
-import { crypto } from "crypto";
+} from "../utils/lucid/utils.ts";
+import crypto from "crypto";
 import {
   APPLIED_VALIDATOR_PATH,
   NON_FUNGIBLE_TOKEN_LABEL,
   REFERENCE_TOKEN_LABEL,
-} from "../common/constants.js";
-import { AppliedValidator } from "../common/types.js";
+} from "../common/constants.ts";
+import { AppliedValidator } from "../common/types.ts";
 
 const lucid = await createLucidInstance();
 

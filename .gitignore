@@ -1,5 +1,13 @@
 node_modules/
-.env
+# .env
 dist/
 Phùng Thế Anh/
 webtest1/
+
+# Aiken compilation artifacts
+aiken-workspace/artifacts/
+# Aiken's project working directory
+aiken-workspace/build/
+# Wallet credentails
+# aiken-workspace/*.sk
+# aiken-workspace/*.addr

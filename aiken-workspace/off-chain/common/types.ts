@@ -1,4 +1,4 @@
-import { Data, Script } from "lucid";
+import { Data, Script } from "https://deno.land/x/lucid@0.10.7/mod.ts";
 
 /// Type to store an applied validator and its properties
 export type AppliedValidator = {

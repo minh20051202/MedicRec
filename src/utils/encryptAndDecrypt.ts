@@ -1,5 +1,5 @@
 import CryptoJS from "crypto-js";
-function encryptData(data, secretKey) {
+function encryptData(data: any, secretKey: string) {
   const encrypted = CryptoJS.AES.encrypt(
     data,
     CryptoJS.enc.Utf8.parse(secretKey),
@@ -13,7 +13,7 @@ function encryptData(data, secretKey) {
   return encrypted;
 }
 
-function decryptData(encryptedData, secretKey) {
+function decryptData(encryptedData: any, secretKey: string) {
   const decrypted = CryptoJS.AES.decrypt(
     encryptedData,
     CryptoJS.enc.Utf8.parse(secretKey),

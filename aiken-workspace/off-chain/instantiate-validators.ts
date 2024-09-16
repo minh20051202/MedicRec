@@ -2,7 +2,7 @@ import {
   getCredential,
   getPublicKeyHash,
   parseValidatorAndApplyParameters,
-} from "./utils/lucid/utils.js";
+} from "./utils/lucid/utils.ts";
 import blueprint from "../plutus.json" assert { type: "json" };
 
 const issuerPublicKeyHash = getPublicKeyHash(

@@ -1,6 +1,6 @@
-import { Blockfrost, fromText, Lucid } from "lucid";
-import { BLOCKFROST_URL, NETWORK } from "../../common/constants.js";
-import { getCredential } from "../lucid/utils.js";
+import { Blockfrost, fromText, Lucid } from "lucid-cardano";
+import { BLOCKFROST_URL, NETWORK } from "../../common/constants.ts";
+import { getCredential } from "../lucid/utils.ts";
 
 const lucid = await Lucid.new(
   new Blockfrost(BLOCKFROST_URL, Deno.env.get("BLOCKFROST_API_KEY")),

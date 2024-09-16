@@ -1,15 +1,15 @@
 // deno-lint-ignore-file no-var
-import { Constr, Data, toUnit } from "lucid";
+import { Constr, Data, toUnit } from "https://deno.land/x/lucid@0.10.7/mod.ts";
 import {
   createLucidInstance,
   getAppliedValidator,
   getCredential,
   getUtxoWithAssets,
-} from "../utils/lucid/utils.js";
+} from "../utils/lucid/utils.ts";
 import {
   NON_FUNGIBLE_TOKEN_LABEL,
   REFERENCE_TOKEN_LABEL,
-} from "../common/constants.js";
+} from "../common/constants.ts";
 
 const lucid = await createLucidInstance();
 lucid.selectWalletFromPrivateKey(await getCredential("user.sk"));
