@@ -121,6 +121,7 @@ button:active {
     background-color: teal; 
     transform: scale(0.95); 
 }
+<<<<<<< HEAD
 
 @keyframes fadeIn {
     0% {
@@ -130,3 +131,5 @@ button:active {
         opacity: 1;
     }
 }
+=======
+>>>>>>> 9cfdf9a4c41b319968e2f5cb700ab9c17495d57f
