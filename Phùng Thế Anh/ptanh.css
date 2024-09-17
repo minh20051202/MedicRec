@@ -1,56 +1,43 @@
-.dropdown {
-    position: relative;
-    display: inline-block;
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+header {
+    background-color: aquamarine;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
+.logo-container {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
 }
 
-.dropdown-content a:hover {
-    background-color: #f1f1f1;
+.logo-container img {
+    height: 60px;
+    border-radius: 30px;
+    margin-right: 10px;
 }
 
-.dropdown:hover .dropdown-content {
-    display: block;
+.logo-container h1 {
+    margin: 0;
+    font-size: 2.5rem;
 }
 
-nav a {
-    text-decoration: none;
-    color: gray;
-    font-weight: bold;
-    margin: 0 15px;
-    transition: color 0.3s ease, transform 0.3s ease;
+nav {
+    margin-top: 10px;
+    flex-grow: 2;
+    text-align: center;
 }
 
-nav a:hover {
-    color: rgb(99, 99, 155); 
-    transform: scale(1.1); 
-}
-
-
-.dropdown-content a {
-    text-decoration: none; 
-    color: gray;
-    transition: color 0.3s ease;
-}
-
-.dropdown-content a:hover {
-    color: darkblue; 
-}
-
+/* Định dạng chung cho các thẻ <a> bên trong <nav> */
 .menu-item {
     text-decoration: none;
     color: black;
@@ -58,15 +45,16 @@ nav a:hover {
     margin: 0 15px;
     padding: 10px 20px;
     transition: color 0.3s ease, background-color 0.3s ease;
-    border-radius: 10px; 
+    border-radius: 10px;
     background-color: #f2f2f2;
 }
 
 .menu-item:hover {
     color: darkblue;
-    background-color: #e6e6e6; 
+    background-color: #e6e6e6;
 }
 
+/* Dropdown menu */
 .dropdown {
     position: relative;
     display: inline-block;
@@ -78,7 +66,7 @@ nav a:hover {
     background-color: #f9f9f9;
     min-width: 160px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
-    border-radius: 10px; 
+    border-radius: 10px;
     z-index: 1;
 }
 
@@ -88,7 +76,7 @@ nav a:hover {
     text-decoration: none;
     display: block;
     transition: background-color 0.3s ease;
-    border-radius: 10px; 
+    border-radius: 10px;
 }
 
 .dropdown-content a:hover {
@@ -99,6 +87,12 @@ nav a:hover {
     display: block;
 }
 
+.wallet-container {
+    flex-grow: 1;
+    text-align: right;
+    padding-right: 20px;
+}
+
 button {
     background-color: aquamarine;
     border: none;
@@ -107,29 +101,46 @@ button {
     margin-left: 15px;
     width: 120px;
     height: 50px;
-    border-radius: 25px; 
+    border-radius: 25px;
     transition: all 0.3s ease;
 }
 
 button:hover {
-    background-color: darkcyan; 
-    color: white; 
-    transform: scale(1.05); 
+    background-color: darkcyan;
+    color: white;
+    transform: scale(1.05);
 }
 
 button:active {
-    background-color: teal; 
-    transform: scale(0.95); 
+    background-color: teal;
+    transform: scale(0.95);
 }
-<<<<<<< HEAD
 
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 700px;
+    background: url('https://wallpapers.com/images/featured-full/healthcare-background-ur9es9e3f2t9gfkd.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
 }
-=======
->>>>>>> 9cfdf9a4c41b319968e2f5cb700ab9c17495d57f
+
+.banner h2 {
+    font-size: 2.5rem;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+footer {
+    background-color: antiquewhite;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
