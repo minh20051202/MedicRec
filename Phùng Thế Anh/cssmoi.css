@@ -651,68 +651,80 @@
 }
 
 nav {
-    margin-top: 10px;
-    flex-grow: 2;
-    text-align: center;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center; /* Căn giữa các mục trong nav */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  flex-grow: 2;
+  text-align: center;
 }
 
 /* Định dạng chung cho các thẻ <a> bên trong <nav> */
 .menu-item {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    margin: 0 15px;
-    padding: 10px 20px;
-    transition: color 0.3s ease, background-color 0.3s ease;
-    border-radius: 10px;
-    background-color: #f2f2f2;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  margin: 0 15px;
+  padding: 10px 20px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  border-radius: 10px;
+  background-color: #f2f2f2;
+  font-size: 20px; /* Tăng kích thước chữ */
 }
 
 .menu-item:hover {
-    color: darkblue;
-    background-color: #e6e6e6;
+  color: darkblue;
+  background-color: #e6e6e6;
+}
+
+/* Định dạng cho thẻ Service */
+.menu-item.service {
+  font-size: 24px; /* Tăng kích thước chữ cho Service */
+  background-color: #e0e0e0; /* Màu nền riêng cho Service */
+}
+
+.menu-item.service:hover {
+  color: darkred; /* Màu chữ khi hover vào Service */
 }
 
 /* Dropdown menu */
 .dropdown {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
 .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    z-index: 1;
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  z-index: 1;
 }
 
 .dropdown-content a {
-    color: black;
-    padding: 10px;
-    text-decoration: none;
-    display: block;
-    transition: background-color 0.3s ease;
-    border-radius: 10px;
+  color: black;
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s ease;
+  border-radius: 10px;
+  font-size: 18px; /* Tăng kích thước chữ cho các mục trong dropdown */
 }
 
 .dropdown-content a:hover {
-    background-color: #e6e6e6;
+  background-color: #e6e6e6;
 }
 
+/* Hiển thị dropdown khi hover vào thẻ Service */
 .dropdown:hover .dropdown-content {
-    display: block;
+  display: block;
 }
 
-.wallet-container {
-    flex-grow: 1;
-    text-align: right;
-    padding-right: 20px;
-}
+
 button {
-    background-color: aquamarine;
+    background-color: rgb(73, 183, 146);
     border: none;
     color: black;
     font-weight: bold;
@@ -721,6 +733,7 @@ button {
     height: 50px;
     border-radius: 25px;
     transition: all 0.3s ease;
+    font-size: large;
 }
 
 button:hover {
@@ -732,4 +745,14 @@ button:hover {
 button:active {
     background-color: teal;
     transform: scale(0.95);
+}
+
+.fade-in {
+  opacity: 0; /* Bắt đầu với độ mờ 0 */
+  transition: opacity 2s ease-in-out; /* Thay đổi độ mờ trong 2 giây */
+}
+
+/* Khi thẻ h1 xuất hiện trong viewport hoặc khi một lớp khác được thêm vào */
+.fade-in.visible {
+  opacity: 1; /* Độ mờ hoàn toàn */
 }
