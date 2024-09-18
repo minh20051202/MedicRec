@@ -1,9 +1,4 @@
 front-end/node_modules/
-# .env
-# Aiken compilation artifacts
+
 smart-contract/artifacts/
-# Aiken's project working directory
-smart-contract/build/
-# Wallet credentails
-# aiken-workspace/*.sk
-# aiken-workspace/*.addr
+
