@@ -1,13 +1,9 @@
-node_modules/
+front-end/node_modules/
 # .env
-dist/
-Phùng Thế Anh/
-webtest1/
-
 # Aiken compilation artifacts
-aiken-workspace/artifacts/
+smart-contract/artifacts/
 # Aiken's project working directory
-aiken-workspace/build/
+smart-contract/build/
 # Wallet credentails
 # aiken-workspace/*.sk
 # aiken-workspace/*.addr
