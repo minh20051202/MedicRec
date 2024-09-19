@@ -34,8 +34,17 @@
             </nav>
         
             <div class="wallet-container">
-                <button href="connect_wallet.html">Connect wallet</button>
+                <button id="connect-wallet-btn">Connect wallet</button>
             </div>
+            <div id="wallet-popup" class="wallet-popup hidden">
+                <div class="wallet-popup-content">
+                    <span id="close-popup" class="close">&times;</span>
+                    <h3>Connect to your wallet</h3>
+                    <button id="lucid-connect " style="border-radius: 30px;">Connect with Lucid</button>
+                </div>
+            </div>
+            
+            
         </header>
 
 
@@ -304,6 +313,7 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@lucid-xyz/lucid@latest"></script>
 
     <script src="jsmoi.js"></script>
 </body>
