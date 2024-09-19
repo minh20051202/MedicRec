@@ -26,32 +26,35 @@ window.addEventListener('load', function() {
 
 
 
-// Hiển thị popup khi nhấn vào nút Connect wallet
+// Hiển thị popup và lớp phủ khi nhấn vào nút "Connect wallet"
 document.getElementById("connect-wallet-btn").addEventListener("click", function() {
+    document.getElementById("overlay").classList.remove("hidden");
     document.getElementById("wallet-popup").classList.remove("hidden");
 });
 
-// Đóng popup khi nhấn vào dấu X
+// Đóng popup và lớp phủ khi nhấn vào dấu "X"
 document.getElementById("close-popup").addEventListener("click", function() {
+    document.getElementById("overlay").classList.add("hidden");
     document.getElementById("wallet-popup").classList.add("hidden");
 });
 
+
+
+
+// Kết nối ví Lucid và đóng popup
 document.getElementById("lucid-connect").addEventListener("click", async function() {
     try {
-        // Khởi tạo và kết nối ví Lucid
         const lucid = await Lucid.new();
         await lucid.enable();
-
-        // Lấy địa chỉ ví đã kết nối
         const address = await lucid.wallet.address();
-
-        // Hiển thị thông tin ví đã kết nối
         document.getElementById("lucid-connect").innerHTML = `Connected: ${address}`;
-        document.getElementById("lucid-connect").disabled = true; // Khóa nút sau khi kết nối
+        document.getElementById("wallet-popup").classList.add("hidden");
+        document.getElementById("overlay").classList.add("hidden"); // Ẩn lớp phủ khi kết nối thành công
     } catch (error) {
         console.error("Failed to connect wallet", error);
         alert("Failed to connect wallet");
     }
 });
+
 
 
