@@ -2,136 +2,127 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>FHIR Resource Input Forms</title>
-	<link rel="stylesheet" href="main.css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.2/FileSaver.min.js"></script>
-	<script type="module" src="main.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .character {
+            width: 150px;
+        }
+
+        .form-container {
+            background-color: #fdf0c9;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 300px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        textarea {
+            resize: none;
+            height: 100px;
+        }
+
+        .submit-btn {
+            background-color: #ffa500;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background-color: #ff8c00;
+        }
+
+        /* Character Styling */
+        .character-container {
+            text-align: center;
+            width: 150px;
+        }
+
+        .character-container img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .character-label {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 
 <body>
 
-	<!-- Patient Form -->
-   <form>
-	<h2>Patient Information</h2>
+    <div class="container">
+        <!-- The Designer -->
+        <div class="character-container">
+            <img src="about-3.png" alt="The Designer">
+            <div class="character-label">The Designer</div>
+        </div>
 
-		<label for="patient-id">Patient ID:</label>
-		<input type="text" id="patient-id" required><br><br>
-
-		<label for="patient-name">Name:</label>
-		<input type="text" id="patient-name" required><br><br>
-
-		<label for="patient-gender">Gender:</label>
-		<select id="patient-gender" required>
-			<option value="male">Male</option>
-			<option value="female">Female</option>
-			<option value="other">Other</option>
-		</select><br><br>
-
-		<label for="patient-birthdate">Birthdate:</label>
-		<input type="date" id="patient-birthdate" required><br><br>
-
-		<label for="patient-address">Address:</label>
-		<input type="text" id="patient-address" required><br><br>
-
+        <!-- Contact Form -->
+        <div class="form-container">
+            <h2>Tạo NFT</h2>
+            <form enctype="multipart/form-data">
+                <input type="text" class="input-field" placeholder="Name" required>
 		
-	
+		</select><br><br>
+				 <!-- Image Upload Field -->
+				 <label for="image-upload">Upload Image:</label>
+				 <input type="file" id="image-upload" class="input-field" accept="image/*" required><br><br>
+				 		
+		<label for="patient-gender">mediaType</label>
+		<select class="input-field" id="patient-gender " required>
+			<option value="male">image/png</option>
+			<option value="female">image/jpg</option>
+			<option value="other">image/jpeg</option>
+				 <input type="patientInfoUrl" class="input-field" placeholder="patientInfoUrl" required>
+				 <textarea class="input-field" placeholder="description"></textarea>
+				 
 
-	<!-- Encounter Form -->
-	<h2>Encounter Information</h2>
-	
-		<label for="encounter-id">Encounter ID:</label>
-		<input type="text" id="encounter-id" required><br><br>
+                
+                <button type="submit" class="submit-btn">Send</button>
+		</form>
+        </div>
 
-		<label for="encounter-type">Type:</label>
-		<input type="text" id="encounter-type" required><br><br>
+        <!-- The Developer -->
+        <div class="character-container">
+            <img src="about-3.png" alt="The Developer">
+            <div class="character-label">The Developer</div>
+        </div>
+    </div>
 
-		<label for="encounter-start">Start Time:</label>
-		<input type="datetime-local" id="encounter-start" required><br><br>
-
-		<label for="encounter-end">End Time:</label>
-		<input type="datetime-local" id="encounter-end" required><br><br>
-
-		<label for="encounter-reason">Reason:</label>
-		<input type="text" id="encounter-reason" required><br><br>
-
-	
-	
-
-	<!-- Observation Form -->
-	<h2>Observation Information</h2>
-
-		<label for="observation-id">Observation ID:</label>
-		<input type="text" id="observation-id" required><br><br>
-
-		<label for="observation-code">Observation Code:</label>
-		<input type="text" id="observation-code" required><br><br>
-
-		<label for="observation-value">Value:</label>
-		<input type="text" id="observation-value" required><br><br>
-
-		<label for="observation-unit">Unit:</label>
-		<input type="text" id="observation-unit" required><br><br>
-
-	
-
-	<!-- Coverage Form -->
-	<h2>Coverage Information</h2>
-		<label for="coverage-id">Coverage ID:</label>
-		<input type="text" id="coverage-id" required><br><br>
-
-		<label for="coverage-type">Coverage Type:</label>
-		<input type="text" id="coverage-type" required><br><br>
-
-		<label for="coverage-subscriber">Subscriber ID:</label>
-		<input type="text" id="coverage-subscriber" required><br><br>
-
-		<label for="coverage-payor">Payor:</label>
-		<input type="text" id="coverage-payor" required><br><br>
-
-	
-
-	<!-- MedicationStatement Form -->
-	<h2>Medication Statement Information</h2>
-		<label for="medication-id">Medication Statement ID:</label>
-		<input type="text" id="medication-id" required><br><br>
-
-		<label for="medication-name">Medication Name:</label>
-		<input type="text" id="medication-name" required><br><br>
-
-		<label for="medication-dosage">Dosage:</label>
-		<input type="text" id="medication-dosage" required><br><br>
-
-		<label for="medication-frequency">Frequency:</label>
-		<input type="text" id="medication-frequency" required><br><br><input type="text" id="inputField" placeholder="Nhập 16 ký tự">
-    <button onclick="checkLength()">Kiểm tra</button>
-    <p id="message"></p>
-	<pre id="response-output"></pre>
-	<button type="button" onclick="submitMedication()">Submit Medication</button>
-</form>
-	
-
-	<!-- Result Section -->
-	<h3>Response</h3>
-  
-
-
-
-  <script>
-      function checkLength() {
-          var input = document.getElementById("inputField").value;
-          var message = document.getElementById("message");
-
-          if (input.length === 16) {
-              message.textContent = "Bạn đã nhập đúng 16 ký tự!";
-              message.className = "success";
-          } else {
-              message.textContent = "Vui lòng nhập đúng 16 ký tự.";
-              message.className = "error";
-          }
-      }
-  </script>
 </body>
 
 </html>
