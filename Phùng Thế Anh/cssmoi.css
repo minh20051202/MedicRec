@@ -843,3 +843,66 @@ button:active {
   filter: blur(5px); /* Hiệu ứng làm mờ */
 }
 
+
+
+.feedback-section {
+  max-width: 350px; /* Thu nhỏ chiều rộng hơn */
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Tăng độ nổi bật của shadow */
+  border: 2px solid #ccc; /* Thêm viền nổi */
+  transition: all 0.3s ease-in-out; /* Hiệu ứng mượt khi tương tác */
+}
+
+.feedback-section:hover {
+  border-color: #4CAF50; /* Thay đổi màu viền khi hover để tạo điểm nhấn */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Tăng shadow khi hover */
+}
+
+.feedback-section h2 {
+  text-align: center;
+  color: #333;
+}
+
+.rating input {
+  display: none;
+}
+
+.rating label {
+  font-size: 30px;
+  color: #ffcc00;
+  cursor: pointer;
+}
+
+.rating input:checked ~ label {
+  color: #ffcc00;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input, button {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+

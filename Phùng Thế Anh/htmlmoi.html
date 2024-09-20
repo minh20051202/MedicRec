@@ -37,17 +37,17 @@
       </nav>
 
       <div class="wallet-container">
-        <button id="connect-wallet-btn">Connect wallet</button>
+        <button id="connect-wallet-btn" style="border-radius: 40px;">Connect wallet</button>
       </div>
 
       <div id="overlay" class="overlay hidden"></div>
       <div id="wallet-popup" class="wallet-popup hidden">
-        <div class="wallet-popup-content">
+        <div class="wallet-popup-content;">
           <span id="close-popup" class="close">&times;</span>
-          <h2 style="margin-bottom: 15px">Connect to your wallet</h2>
+          <h2 style="margin-bottom: 15px; margin-top: 20px; margin-left: 60px;">Connect to your wallet</h2>
           <button
             id="lucid-connect "
-            style="border-radius: 30px; font-size: 15px">Connect with Lucid</button>
+            style="border-radius: 50px; font-size: 15px">Connect with Lucid</button>
         </div>
       </div>
     </header>
@@ -198,7 +198,35 @@
           </div>
         </div>
       </div>
-    </section>
+    </section >
+
+
+
+    <div style="width: 600px;padding: 20px; justify-content: center; margin: 0 auto; box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);border-radius: 15px; ">
+      <h1 style="justify-content: center;">Đánh giá của bạn</h1>
+      <h3 style="margin-bottom:15px; margin-top: 10px;">Chúng tôi rất mong nhận được ý kiến đóng góp từ bạn để cải thiện dịch vụ tốt hơn. Xin vui lòng điền vào form dưới đây:</h3>
+      
+      <form action="/submit-feedback" method="POST">
+          <!-- Tên bệnh nhân -->
+          <label for="name">Họ và Tên:</label><br>
+          <input type="text" id="name" name="name" placeholder="Nhập họ và tên của bạn" required><br><br>
+  
+          <!-- Địa chỉ Email -->
+          <label for="email">Email:</label><br>
+          <input type="email" id="email" name="email" placeholder="Nhập email của bạn" required><br><br>
+  
+          <!-- Số điện thoại -->
+          <label for="phone">Số điện thoại:</label><br>
+          <input type="tel" id="phone" name="phone" placeholder="Nhập số điện thoại của bạn"><br><br>
+  
+          <!-- Nội dung phản hồi -->
+          <label for="comments">Ý kiến đóng góp:</label><br>
+          <textarea id="comments" name="comments" rows="5" placeholder="Viết đánh giá của bạn tại đây" required></textarea><br><br>
+  
+          <!-- Nút gửi -->
+          <button type="submit">Gửi đánh giá</button>
+      </form>
+    </div>
 
     <section id="review" class="review">
       <h1 class="heading">đánh giá của bệnh nhân chúng tôi</h1>
@@ -322,6 +350,7 @@
         </div>
       </div>
     </section>
+    
 
     <section class="footer">
       <div class="box">
