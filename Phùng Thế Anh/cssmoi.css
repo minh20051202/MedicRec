@@ -906,3 +906,29 @@ button:hover {
   background-color: #45a049;
 }
 
+.heading {
+  text-align: center; /* Căn giữa tiêu đề */
+  color: #4CAF50; /* Màu chữ */
+  font-size: 28px; /* Kích thước chữ */
+  margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
+}
+
+ol {
+  list-style-type: none; /* Xóa số mặc định */
+  padding: 0; /* Xóa khoảng cách bên trong */
+  max-width: 500px; /* Chiều rộng tối đa của danh sách */
+  margin: 0 auto; /* Căn giữa danh sách */
+}
+
+.title {
+  background-color: #f2f2f2; /* Màu nền cho mỗi mục */
+  border: 1px solid #ccc; /* Viền cho mỗi mục */
+  border-radius: 5px; /* Bo tròn góc */
+  padding: 10px; /* Khoảng cách trong mỗi mục */
+  margin: 10px 0; /* Khoảng cách giữa các mục */
+  transition: background-color 0.3s; /* Hiệu ứng chuyển màu nền khi hover */
+}
+
+.title:hover {
+  background-color: #e0f7fa; /* Màu nền khi hover */
+}
