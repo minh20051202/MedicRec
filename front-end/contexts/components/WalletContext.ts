@@ -1,7 +1,7 @@
 "use client";
 
 import React, { createContext } from "react";
-import { WalletContextType } from "../../types/contexts/WalletContextType.d.ts";
+import type { WalletContextType } from "../../types/contexts/WalletContextType.d.ts";
 
 const WalletContext = createContext<WalletContextType>(null!);
 

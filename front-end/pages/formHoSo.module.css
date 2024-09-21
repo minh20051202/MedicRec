@@ -1,0 +1,41 @@
+/* formHoSo.module.css */
+.formContainer {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .formTitle {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+    color: #333;
+  }
+  
+  .inputField {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .submit {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 1em;
+  }
+  
+  .submit:hover {
+    background-color: #45a049;
+  }
+  
+  .message {
+    color: red; /* Change this to whatever suits your design */
+  }
+  

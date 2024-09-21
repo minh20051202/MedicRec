@@ -1,7 +1,7 @@
 "use client";
 
 import React, { createContext } from "react";
-import { LucidContextType } from "../../types/contexts/LucidContextType.d.ts";
+import type { LucidContextType } from "../../types/contexts/LucidContextType.d.ts";
 
 const LucidContext = createContext<LucidContextType>(null!);
 
