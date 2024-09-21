@@ -195,16 +195,15 @@ const MedicRec = function ({}: Props) {
                     <label htmlFor="image-upload">Upload Image:</label>
                     <input
                       type="file"
-                      id="image-upload"
+                      id="image-upload2"
                       style={inputFieldStyle}
                       accept="image/*"
-                      required
                     />
                     <br />
                     <br />
 
-                    <label htmlFor="media-type">Media Type</label>
-                    <select style={inputFieldStyle} id="media-type" required>
+                    <label htmlFor="media-type2">Media Type</label>
+                    <select style={inputFieldStyle} id="media-type2">
                       <option value="image/png">image/png</option>
                       <option value="image/jpg">image/jpg</option>
                       <option value="image/jpeg">image/jpeg</option>
@@ -214,18 +213,18 @@ const MedicRec = function ({}: Props) {
 
                     <input
                       type="text"
-                      id="patient-info-url"
+                      id="patient-info-url2"
                       style={inputFieldStyle}
                       placeholder="Patient Info URL"
-                      required
                     />
                     <br />
                     <br />
 
                     <textarea
-                      id="description"
+                      id="description2"
                       style={inputFieldStyle}
                       placeholder="Description"
+                      required
                     ></textarea>
                     <br />
                     <br />
@@ -238,7 +237,7 @@ const MedicRec = function ({}: Props) {
                       ).value;
 
                       const fileInput = document.getElementById(
-                        "image-upload"
+                        "image-upload2"
                       ) as HTMLInputElement;
                       const file = fileInput.files ? fileInput.files[0] : null;
 
@@ -250,21 +249,20 @@ const MedicRec = function ({}: Props) {
                             image: ipfsImageUrl,
                             mediaType: (
                               document.getElementById(
-                                "media-type"
+                                "media-type2"
                               ) as HTMLSelectElement
                             ).value,
                             description: (
                               document.getElementById(
-                                "description"
+                                "description2"
                               ) as HTMLTextAreaElement
                             ).value,
                             patientInfoUrl: (
                               document.getElementById(
-                                "patient-info-url"
+                                "patient-info-url2"
                               ) as HTMLInputElement
                             ).value,
                           };
-
                           updateNFT(CIP68NFT, updateFields);
                         } catch (error) {
                           console.error("Error during updating:", error);

@@ -193,7 +193,6 @@ const SmartContractProvider = function ({ children }: Props) {
             fromText("description"),
             fromText(updateFields.description)
           );
-          console.log(metadata?.get(fromText("description")));
         }
 
         if (
