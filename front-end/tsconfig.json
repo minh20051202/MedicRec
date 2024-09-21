@@ -1,17 +1,41 @@
 {
-	"compilerOptions": {
-		"module": "esnext", // Ensures ES Module syntax
-		"target": "es6", // Specify ECMAScript target version
-		"outDir": "./dist", // Redirect output structure to the directory
-		"rootDir": "off-chain", // Specify the root directory of input files
-		"strict": true, // Enable all strict type-checking options
-		"esModuleInterop": true, // Enable compatibility with CommonJS modules
-		"skipLibCheck": true // Skip type checking of declaration files
-	},
-	"include": [
-		"off-chain/**/*"
-	],
-	"exclude": [
-		"node_modules"
-	]
+  "compilerOptions": {
+    "target": "ESNext",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "allowImportingTsExtensions": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "~/*": [
+        "./src/*"
+      ]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
