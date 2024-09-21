@@ -1,5 +1,5 @@
-function checkLeght() {
-    var input = document.getElementById("inputField").value;
+function checkLength() {
+    var input = document.getElementById("inputField").value; // Lấy giá trị trước
     var message = document.getElementById("message");
 
     if (input.length === 16) {

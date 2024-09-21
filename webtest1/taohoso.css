@@ -1,3 +1,209 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f7f8;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+h2,
+h3 {
+  text-align: center;
+  color: #4caf50;
+}
+
+form {
+  background: #fdf0c9;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+}
+
+.form-title {
+  text-align: left;
+  color: #4caf50;
+  font-size: 22px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #4caf50;
+  padding-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #555;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="datetime-local"],
+select {
+  width: calc(100% - 20px);
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="datetime-local"]:focus,
+select:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+.submit {
+  width: 100%;
+  padding: 15px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+.submit:hover {
+  background-color: #45a049;
+}
+
+pre {
+  background-color: #f4f7f8;
+  border: 1px solid #ddd;
+  padding: 20px;
+  max-width: 600px;
+  margin: 20px auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  border-radius: 8px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+h3 {
+  margin-top: 40px;
+  color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  form {
+    padding: 20px;
+  }
+
+  input[type="text"],
+  input[type="date"],
+  input[type="datetime-local"],
+  select {
+    width: calc(100% - 16px);
+    padding: 8px;
+  }
+
+  button {
+    font-size: 16px;
+  }
+}
+
+
+header {
+  background-color: aquamarine;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.logo-container img {
+  height: 60px;
+  border-radius: 30px;
+  margin-right: 10px;
+}
+
+.logo-container h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+nav {
+  margin-top: 10px;
+  flex-grow: 2;
+  text-align: center;
+}
+
+/* Định dạng chung cho các thẻ <a> bên trong <nav> */
+.menu-item {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  margin: 0 15px;
+  padding: 10px 20px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  border-radius: 10px;
+  background-color: #f2f2f2;
+}
+
+.menu-item:hover {
+  color: darkblue;
+  background-color: #e6e6e6;
+}
+
+/* Dropdown menu */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s ease;
+  border-radius: 10px;
+}
+
+.dropdown-content a:hover {
+  background-color: #e6e6e6;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.wallet-container{
+  
+
+  flex-grow: 1;
+  text-align: right;
+  padding-right: 20px;
+}
+
+
+
   /* google font   */
   @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
@@ -842,3 +1048,13 @@ button:active {
 .body-blur .content {
   filter: blur(5px); /* Hiệu ứng làm mờ */
 }
+
+
+
+
+
+.test{
+  margin-top: 100px;
+}
+
+
