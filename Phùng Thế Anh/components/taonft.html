@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+   <link rel="stylesheet" href="taonft.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/LogoUTC.jpg/640px-LogoUTC.jpg"
+            alt="Hospital Logo"
+          />
+          <h1 class="fade-in">MedicRec</h1>
+        </div>
+  
+        <nav>
+          <a href="home.html" class="menu-item">Home</a>
+          <div class="dropdown">
+            <a href="Service.html" class="menu-item">Service</a>
+            <div class="dropdown-content">
+              <a href="taohoso.html">Tạo hồ sơ</a>
+              <a href="taonft.html">Tạo NFT</a>
+              <a href="#">Update NFT</a>
+            </div>
+          </div>
+          <a href="About.html" class="menu-item">About</a>
+        </nav>
+  
+        <div class="wallet-container">
+          <button id="connect-wallet-btn">Connect wallet</button>
+        </div>
+  
+        <div id="overlay" class="overlay hidden"></div>
+        <div id="wallet-popup" class="wallet-popup hidden">
+          <div class="wallet-popup-content">
+            <span id="close-popup" class="close">&times;</span>
+            <h2 style="margin-bottom: 15px">Connect to your wallet</h2>
+            
+            <button
+              id="lucid-connect "
+              style="border-radius: 30px; font-size: 15px">Connect with Lucid</button>
+          </div>
+        </div>
+      </header>
+      <div class="test">
+    <div class="container">
+        <!-- The Designer -->
+        <div class="character-container">
+            <img src="about-3 (1).png" alt="The Designer">
+            <div class="character-label"></div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="form-container">
+            <h2>Tạo NFT</h2>
+            <form enctype="multipart/form-data">
+                <input type="text" class="input-field" placeholder="Name" required>
+		
+		</select><br><br>
+				 <!-- Image Upload Field -->
+				 <label for="image-upload">Upload Image:</label>
+				 <input type="file" id="image-upload" class="input-field" accept="image/*" required><br><br>
+				 		
+		<label for="patient-gender">mediaType</label>
+		<select class="input-field" id="patient-gender " required>
+			<option value="male">image/png</option>
+			<option value="female">image/jpg</option>
+			<option value="other">image/jpeg</option>
+				 <input type="patientInfoUrl" class="input-field" placeholder="patientInfoUrl" required>
+				 <textarea class="input-field" placeholder="description"></textarea>
+				 
+
+                
+                <button type="submit" class="submit-btn">Send</button>
+		</form>
+        </div>
+
+        <!-- The Developer -->
+        <div class="character-container">
+            <img src="about-3 (1).png" alt="The Developer">
+            <div class="character-label"></div>
+        </div>
+    </div>
+</div>
+<section class="footer">
+    <div class="box">
+      <h2 class="logo"><span>Quay </span>lại đầu trang</h2>
+
+      <a href="home.html">Home</a>
+    </div>
+
+    <h1 class="credit">
+      Được tạo bởi <span>MedicRec.</span> Nhằm hỗ trợ bệnh viện lưu trữ hồ sơ
+      bệnh án phi tập trung.
+    </h1>
+  </section>
+
+</body>
+
+</html>
