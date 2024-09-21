@@ -1,5 +1,5 @@
 "use client";
-
+import type { UpdateFields } from "../../types/contexts/SmartContractContextType";
 import React, { ReactNode, useState } from "react";
 import {
   createLucidInstance,
@@ -31,6 +31,7 @@ type Props = {
 import sha3 from "js-sha3";
 
 const SmartContractProvider = function ({ children }: Props) {
+  const [CIP68NFT, setCIP68NFT] = useState<string>("");
   const [mintTxHash, setMintTxHash] = useState<string>("");
   const [waitingMintTx, setWaitingMintTx] = useState<boolean>(false);
   const [updateTxHash, setUpdateTxHash] = useState<string>("");
@@ -131,6 +132,7 @@ const SmartContractProvider = function ({ children }: Props) {
     Policy Id: ${mintValidator.policyId},
     txHash: ${txHash}`
       );
+      setCIP68NFT(userNFT);
       setMintTxHash(txHash);
     } catch (error) {
       console.log(error);
@@ -139,15 +141,14 @@ const SmartContractProvider = function ({ children }: Props) {
     }
   };
 
-  const updateNFT = async function ({
-    CIP68NFT,
-    updateFields,
-  }: {
-    CIP68NFT: string;
-    updateFields: any;
-  }): Promise<void> {
+  const updateNFT = async function (
+    CIP68NFT: string,
+    updateFields: UpdateFields
+  ): Promise<void> {
     try {
+      setWaitingUpdateTx(true);
       const lucid = await createLucidInstance();
+
       lucid.selectWalletFromPrivateKey(ISSUER_SK);
 
       const mintValidator: AppliedValidator = JSON.parse(MINT_MINT_JSON);
@@ -161,16 +162,14 @@ const SmartContractProvider = function ({ children }: Props) {
         assetNameSuffix,
         REFERENCE_TOKEN_LABEL
       );
+
       const refUtxo = getUtxoWithAssets(storeUtxos, { [refToken]: 1n });
 
       let metaDatum: MetaDatum;
+
       try {
         metaDatum = Data.from<MetaDatum>(refUtxo.datum!, MetaDatum);
         const metadata = metaDatum?.metadata;
-
-        if (updateFields.name !== "" && updateFields.name !== undefined) {
-          metadata?.set(fromText("name"), fromText(updateFields.name));
-        }
 
         if (updateFields.image !== "" && updateFields.image !== undefined) {
           metadata?.set(fromText("image"), fromText(updateFields.image));
@@ -194,6 +193,7 @@ const SmartContractProvider = function ({ children }: Props) {
             fromText("description"),
             fromText(updateFields.description)
           );
+          console.log(metadata?.get(fromText("description")));
         }
 
         if (
@@ -218,6 +218,7 @@ const SmartContractProvider = function ({ children }: Props) {
           );
         }
       }
+
       const rdmr = Data.to(new Constr(0, []));
 
       const tx = await lucid
@@ -254,6 +255,7 @@ const SmartContractProvider = function ({ children }: Props) {
   return (
     <SmartContractContext.Provider
       value={{
+        CIP68NFT,
         mintTxHash,
         updateTxHash,
         waitingMintTx,

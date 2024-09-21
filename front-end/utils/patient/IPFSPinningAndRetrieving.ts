@@ -43,4 +43,18 @@ async function retrieveFromIPFS(signedURL: string) {
   }
 }
 
-export { uploadToIPFS, retrieveFromIPFS };
+const uploadImageToIPFS = async (file: File) => {
+  try {
+    const upload = await pinata.upload.file(file);
+    const url = await pinata.gateways.createSignedURL({
+      cid: upload.cid,
+      expires: 999999999999999,
+    });
+    return url;
+  } catch (error) {
+    console.error("Error uploading image to IPFS:", error);
+    throw new Error("Failed to upload image");
+  }
+};
+
+export { uploadToIPFS, retrieveFromIPFS, uploadImageToIPFS };
