@@ -12,8 +12,11 @@ import LucidContext from "../contexts/components/LucidContext";
 import { WalletContextType } from "../types/contexts/WalletContextType";
 import WalletContext from "../contexts/components/WalletContext";
 import { uploadImageToIPFS } from "../utils/patient/IPFSPinningAndRetrieving";
+import styles from "./MedicRec.module.css"; // Import styles as a module
 
-const MedicRec = function () {
+type Props = {};
+
+const MedicRec = function ({}: Props) {
   const {
     CIP68NFT,
     mintNFT,
@@ -27,46 +30,41 @@ const MedicRec = function () {
   const { connect } = useContext<WalletContextType>(WalletContext);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-lg w-96">
+    <div className={styles["medic-rec-container"]}>
+      <div className={styles["medic-rec-form-container"]}>
         {!lucid && (
-          <div className="mb-4">
-            <button
-              className="w-full py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              onClick={connect}
-            >
-              Connect Wallet
-            </button>
+          <div className={styles["medic-rec-connect-button"]}>
+            <button onClick={connect}>Connect Wallet</button>
           </div>
         )}
 
         {lucid && (
           <div>
-            <form encType="multipart/form-data" className="space-y-4">
+            <h2 className={styles["medic-rec-title"]}>
+              Mint And Update Your Dynamic NFT
+            </h2>
+            <form
+              encType="multipart/form-data"
+              className={styles["medic-rec-form"]}
+            >
               <input
                 type="text"
-                className="w-full p-2 border rounded"
+                className={styles["medic-rec-input"]}
                 placeholder="Name"
                 id="name"
                 required
               />
 
-              <label htmlFor="image-upload" className="block text-gray-700">
-                Upload Image:
-              </label>
               <input
                 type="file"
                 id="image-upload"
-                className="w-full p-2 border rounded"
+                className={styles["medic-rec-input"]}
                 accept="image/*"
                 required
               />
 
-              <label htmlFor="media-type" className="block text-gray-700">
-                Media Type
-              </label>
               <select
-                className="w-full p-2 border rounded"
+                className={styles["medic-rec-input"]}
                 id="media-type"
                 required
               >
@@ -74,25 +72,23 @@ const MedicRec = function () {
                 <option value="image/jpg">image/jpg</option>
                 <option value="image/jpeg">image/jpeg</option>
               </select>
-
               <input
                 type="text"
                 id="patient-info-url"
-                className="w-full p-2 border rounded"
+                className={styles["medic-rec-input"]}
                 placeholder="Patient Info URL"
                 required
               />
-
               <textarea
                 id="description"
-                className="w-full p-2 border rounded"
+                className={styles["medic-rec-input"]}
                 placeholder="Description"
+                required
               ></textarea>
-
               <button
-                className="w-full py-2 mt-4 bg-blue-600 text-white rounded-lg hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className={styles["medic-rec-button"]}
                 onClick={async (e) => {
-                  e.preventDefault(); // Prevent form submission
+                  e.preventDefault(); // Prevent default form submission
                   const fileInput = document.getElementById(
                     "image-upload"
                   ) as HTMLInputElement;
@@ -101,7 +97,6 @@ const MedicRec = function () {
                   if (file) {
                     try {
                       const ipfsImageUrl = await uploadImageToIPFS(file);
-
                       const patientMetaData = {
                         name: (
                           document.getElementById("name") as HTMLInputElement
@@ -138,74 +133,58 @@ const MedicRec = function () {
             </form>
 
             {mintTxHash && CIP68NFT && (
-              <div className="mt-6">
-                <h3 className="font-semibold mb-2">NFT minted</h3>
-                <Link
-                  className="text-blue-600"
-                  target="_blank"
-                  href={`https://preprod.cardanoscan.io/transaction/${mintTxHash}`}
+              <div className={styles["nft-result-section"]}>
+                <h3 className={styles["nft-result-title"]}>NFT Minted</h3>
+                <p className={styles["nft-result-label"]}>Transaction Hash:</p>
+                <p className={styles["nft-result-value"]}>{mintTxHash}</p>
+                <p className={styles["nft-result-label"]}>CIP68NFT:</p>
+                <p className={styles["nft-result-value"]}>{CIP68NFT}</p>
+                <form
+                  encType="multipart/form-data"
+                  className={styles["medic-rec-form"]}
                 >
-                  {mintTxHash}
-                </Link>
-                <h3 className="font-semibold mt-4 mb-2">CIP68NFT</h3>
-                <div className="border p-2 rounded">{CIP68NFT}</div>
-
-                <form encType="multipart/form-data" className="space-y-4 mt-6">
                   <input
                     type="text"
-                    className="w-full p-2 border rounded"
+                    className={styles["medic-rec-input"]}
                     placeholder="CIP68NFT"
                     id="CIP68NFT"
                     required
                   />
-
-                  <label
-                    htmlFor="image-upload2"
-                    className="block text-gray-700"
-                  >
-                    Upload Image:
-                  </label>
+                  <label htmlFor="image-upload2">Upload Image:</label>
                   <input
                     type="file"
                     id="image-upload2"
-                    className="w-full p-2 border rounded"
+                    className={styles["medic-rec-input"]}
                     accept="image/*"
                   />
-
-                  <label htmlFor="media-type2" className="block text-gray-700">
-                    Media Type
-                  </label>
+                  <label htmlFor="media-type2">Media Type</label>
                   <select
-                    className="w-full p-2 border rounded"
+                    className={styles["medic-rec-input"]}
                     id="media-type2"
                   >
                     <option value="image/png">image/png</option>
                     <option value="image/jpg">image/jpg</option>
                     <option value="image/jpeg">image/jpeg</option>
                   </select>
-
                   <input
                     type="text"
                     id="patient-info-url2"
-                    className="w-full p-2 border rounded"
+                    className={styles["medic-rec-input"]}
                     placeholder="Patient Info URL"
                   />
-
                   <textarea
                     id="description2"
-                    className="w-full p-2 border rounded"
+                    className={styles["medic-rec-input"]}
                     placeholder="Description"
                     required
                   ></textarea>
-
                   <button
-                    className="w-full py-2 mt-4 bg-blue-600 text-white rounded-lg hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className={styles["medic-rec-button"]}
                     onClick={async (e) => {
-                      e.preventDefault(); // Prevent form submission
+                      e.preventDefault(); // Prevent default form submission
                       const CIP68NFT = (
                         document.getElementById("CIP68NFT") as HTMLInputElement
                       ).value;
-
                       const fileInput = document.getElementById(
                         "image-upload2"
                       ) as HTMLInputElement;
@@ -214,7 +193,6 @@ const MedicRec = function () {
                       if (file) {
                         try {
                           const ipfsImageUrl = await uploadImageToIPFS(file);
-
                           const updateFields: UpdateFields = {
                             image: ipfsImageUrl,
                             mediaType: (
@@ -246,18 +224,22 @@ const MedicRec = function () {
                 </form>
               </div>
             )}
-
             {updateTxHash && (
-              <div className="mt-6">
-                <h3 className="font-semibold mb-2">NFT Updated</h3>
-                <Link
-                  className="text-blue-600"
-                  target="_blank"
-                  href={`https://preprod.cardanoscan.io/transaction/${updateTxHash}`}
-                >
-                  {updateTxHash}
-                </Link>
-              </div>
+              <>
+                <div className={styles["nft-result-section"]}>
+                  <h3 className={styles["nft-result-title"]}>NFT Updated</h3>
+
+                  <Link
+                    target="_blank"
+                    href={`https://preprod.cardanoscan.io/transaction/${updateTxHash}`}
+                  >
+                    <p className={styles["nft-result-label"]}>
+                      Transaction Hash:
+                    </p>
+                    <p className={styles["nft-result-value"]}>{updateTxHash}</p>
+                  </Link>
+                </div>
+              </>
             )}
           </div>
         )}

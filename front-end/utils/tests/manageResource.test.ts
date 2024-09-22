@@ -1,5 +1,5 @@
 import { FHIR_CLIENT, createFHIRBundle } from "../patient/manageResource.ts";
-import * as fs from "fs";
+
 const newPatient = {
   resourceType: "Patient",
   name: [

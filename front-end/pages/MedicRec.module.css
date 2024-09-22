@@ -1,0 +1,121 @@
+.medic-rec-container {
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f0f4f8;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.medic-rec-form-container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 550px;
+    overflow-x: hidden;
+}
+
+.medic-rec-title {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #2d3748;
+    font-weight: 700;
+    text-align: center;
+}
+
+.medic-rec-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.medic-rec-input {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    color: #4a5568;
+}
+
+.medic-rec-input:focus {
+    border-color: #4299e1;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
+    outline: none;
+}
+
+.medic-rec-button {
+    background-color: #4299e1;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.medic-rec-button:hover {
+    background-color: #3182ce;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.medic-rec-button:disabled {
+    background-color: #a0aec0;
+    cursor: not-allowed;
+}
+
+.nft-result-section {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f7fafc;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.nft-result-title {
+    font-size: 20px;
+    color: #2d3748;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.nft-result-value {
+    font-size: 14px;
+    word-break: break-all;
+    background-color: #edf2f7;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+    margin-top: 10px;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.nft-result-label {
+    font-size: 16px;
+    color: #4a5568;
+    margin-top: 15px;
+    font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .medic-rec-form-container {
+        padding: 30px;
+    }
+
+    .medic-rec-title {
+        font-size: 24px;
+    }
+
+    .medic-rec-button {
+        font-size: 16px;
+    }
+}

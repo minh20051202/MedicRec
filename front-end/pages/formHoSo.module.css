@@ -1,41 +1,84 @@
-/* formHoSo.module.css */
 .formContainer {
-    max-width: 600px;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.formTitle {
+  font-size: 1.8em;
+  margin-top: 80px; /* Adjust this value based on the height of your navbar */
+  margin-bottom: 1.5em;
+  color: #2c3e50;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 0.5em;
+}
+
+
+.inputField {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0 20px;
+  border: 1px solid #bdc3c7;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.inputField:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.submit {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 1.5em;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.submit:hover {
+  background-color: #2980b9;
+}
+
+.message {
+  color: #e74c3c;
+  font-size: 14px;
+  margin-top: 10px;
+  display: block;
+}
+
+.label {
+  font-weight: bold;
+  color: #34495e;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23333' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 30px;
+}
+
+@media (max-width: 600px) {
+  .formContainer {
+    padding: 1rem;
   }
   
-  .formTitle {
-    font-size: 1.5em;
-    margin-bottom: 1em;
-    color: #333;
+  .inputField, .submit {
+    font-size: 14px;
   }
-  
-  .inputField {
-    width: 100%;
-    padding: 8px;
-    margin: 5px 0 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .submit {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    margin-top: 1em;
-  }
-  
-  .submit:hover {
-    background-color: #45a049;
-  }
-  
-  .message {
-    color: red; /* Change this to whatever suits your design */
-  }
-  
+}

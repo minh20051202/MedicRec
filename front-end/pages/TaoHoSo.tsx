@@ -4,11 +4,12 @@ import styles from "./formHoSo.module.css"; // Import CSS module
 
 const TaoHoSo: React.FC = () => {
   const [message, setMessage] = useState<string>("");
-
+  const [ipfsUrl, setIpfsUrl] = useState<string>("");
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      await createPatientBundle(); // Call the function to create the patient bundle
+      const PatientBundle = await createPatientBundle();
+      setIpfsUrl(PatientBundle || "Không có dữ liệu IPFS URL");
       setMessage("Hồ sơ đã được gửi thành công!");
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -20,7 +21,9 @@ const TaoHoSo: React.FC = () => {
     <form onSubmit={handleSubmit} className={styles.formContainer}>
       <h2 className={styles.formTitle}>Patient Information</h2>
 
-      <label htmlFor="patient-name">Name:</label>
+      <label htmlFor="patient-name" className={styles.label}>
+        Name:
+      </label>
       <input
         className={styles.inputField}
         type="text"
@@ -28,18 +31,24 @@ const TaoHoSo: React.FC = () => {
         required
       />
       <br />
-      <br />
 
-      <label htmlFor="patient-gender">Gender:</label>
-      <select className={styles.inputField} id="patient-gender" required>
+      <label htmlFor="patient-gender" className={styles.label}>
+        Gender:
+      </label>
+      <select
+        className={`${styles.inputField} ${styles.select}`}
+        id="patient-gender"
+        required
+      >
         <option value="male">Male</option>
         <option value="female">Female</option>
         <option value="other">Other</option>
       </select>
       <br />
-      <br />
 
-      <label htmlFor="patient-birthdate">Birthdate:</label>
+      <label htmlFor="patient-birthdate" className={styles.label}>
+        Birthdate:
+      </label>
       <input
         className={styles.inputField}
         type="date"
@@ -47,9 +56,10 @@ const TaoHoSo: React.FC = () => {
         required
       />
       <br />
-      <br />
 
-      <label htmlFor="patient-address">Address:</label>
+      <label htmlFor="patient-address" className={styles.label}>
+        Address:
+      </label>
       <input
         className={styles.inputField}
         type="text"
@@ -57,10 +67,11 @@ const TaoHoSo: React.FC = () => {
         required
       />
       <br />
-      <br />
 
       <h2 className={styles.formTitle}>Encounter Information</h2>
-      <label htmlFor="encounter-id">Encounter ID:</label>
+      <label htmlFor="encounter-id" className={styles.label}>
+        Encounter ID:
+      </label>
       <input
         className={styles.inputField}
         type="text"
@@ -68,9 +79,10 @@ const TaoHoSo: React.FC = () => {
         required
       />
       <br />
-      <br />
 
-      <label htmlFor="encounter-type">Type:</label>
+      <label htmlFor="encounter-type" className={styles.label}>
+        Type:
+      </label>
       <input
         className={styles.inputField}
         type="text"
@@ -78,9 +90,10 @@ const TaoHoSo: React.FC = () => {
         required
       />
       <br />
-      <br />
 
-      <label htmlFor="encounter-start">Start Time:</label>
+      <label htmlFor="encounter-start" className={styles.label}>
+        Start Time:
+      </label>
       <input
         className={styles.inputField}
         type="datetime-local"
@@ -88,9 +101,10 @@ const TaoHoSo: React.FC = () => {
         required
       />
       <br />
-      <br />
 
-      <label htmlFor="encounter-end">End Time:</label>
+      <label htmlFor="encounter-end" className={styles.label}>
+        End Time:
+      </label>
       <input
         className={styles.inputField}
         type="datetime-local"
@@ -98,9 +112,10 @@ const TaoHoSo: React.FC = () => {
         required
       />
       <br />
-      <br />
 
-      <label htmlFor="encounter-reason">Reason:</label>
+      <label htmlFor="encounter-reason" className={styles.label}>
+        Reason:
+      </label>
       <input
         className={styles.inputField}
         type="text"
@@ -108,10 +123,11 @@ const TaoHoSo: React.FC = () => {
         required
       />
       <br />
-      <br />
 
       <h2 className={styles.formTitle}>Observation Information</h2>
-      <label htmlFor="observation-id">Observation ID:</label>
+      <label htmlFor="observation-id" className={styles.label}>
+        Observation ID:
+      </label>
       <input
         className={styles.inputField}
         type="text"
@@ -119,9 +135,10 @@ const TaoHoSo: React.FC = () => {
         required
       />
       <br />
-      <br />
 
-      <label htmlFor="observation-code">Observation Code:</label>
+      <label htmlFor="observation-code" className={styles.label}>
+        Observation Code:
+      </label>
       <input
         className={styles.inputField}
         type="text"
@@ -129,9 +146,10 @@ const TaoHoSo: React.FC = () => {
         required
       />
       <br />
-      <br />
 
-      <label htmlFor="observation-value">Value:</label>
+      <label htmlFor="observation-value" className={styles.label}>
+        Value:
+      </label>
       <input
         className={styles.inputField}
         type="text"
@@ -139,9 +157,10 @@ const TaoHoSo: React.FC = () => {
         required
       />
       <br />
-      <br />
 
-      <label htmlFor="observation-unit">Unit:</label>
+      <label htmlFor="observation-unit" className={styles.label}>
+        Unit:
+      </label>
       <input
         className={styles.inputField}
         type="text"
@@ -149,10 +168,11 @@ const TaoHoSo: React.FC = () => {
         required
       />
       <br />
-      <br />
 
       <h2 className={styles.formTitle}>Coverage Information</h2>
-      <label htmlFor="coverage-id">Coverage ID:</label>
+      <label htmlFor="coverage-id" className={styles.label}>
+        Coverage ID:
+      </label>
       <input
         className={styles.inputField}
         type="text"
@@ -160,9 +180,10 @@ const TaoHoSo: React.FC = () => {
         required
       />
       <br />
-      <br />
 
-      <label htmlFor="coverage-type">Coverage Type:</label>
+      <label htmlFor="coverage-type" className={styles.label}>
+        Coverage Type:
+      </label>
       <input
         className={styles.inputField}
         type="text"
@@ -170,9 +191,10 @@ const TaoHoSo: React.FC = () => {
         required
       />
       <br />
-      <br />
 
-      <label htmlFor="coverage-subscriber">Subscriber ID:</label>
+      <label htmlFor="coverage-subscriber" className={styles.label}>
+        Subscriber ID:
+      </label>
       <input
         className={styles.inputField}
         type="text"
@@ -180,9 +202,10 @@ const TaoHoSo: React.FC = () => {
         required
       />
       <br />
-      <br />
 
-      <label htmlFor="coverage-payor">Payor:</label>
+      <label htmlFor="coverage-payor" className={styles.label}>
+        Payor:
+      </label>
       <input
         className={styles.inputField}
         type="text"
@@ -190,10 +213,11 @@ const TaoHoSo: React.FC = () => {
         required
       />
       <br />
-      <br />
 
       <h2 className={styles.formTitle}>Medication Statement Information</h2>
-      <label htmlFor="medication-id">Medication Statement ID:</label>
+      <label htmlFor="medication-id" className={styles.label}>
+        Medication Statement ID:
+      </label>
       <input
         className={styles.inputField}
         type="text"
@@ -201,9 +225,10 @@ const TaoHoSo: React.FC = () => {
         required
       />
       <br />
-      <br />
 
-      <label htmlFor="medication-name">Medication Name:</label>
+      <label htmlFor="medication-name" className={styles.label}>
+        Medication Name:
+      </label>
       <input
         className={styles.inputField}
         type="text"
@@ -211,9 +236,10 @@ const TaoHoSo: React.FC = () => {
         required
       />
       <br />
-      <br />
 
-      <label htmlFor="medication-dosage">Dosage:</label>
+      <label htmlFor="medication-dosage" className={styles.label}>
+        Dosage:
+      </label>
       <input
         className={styles.inputField}
         type="text"
@@ -221,9 +247,10 @@ const TaoHoSo: React.FC = () => {
         required
       />
       <br />
-      <br />
 
-      <label htmlFor="medication-frequency">Frequency:</label>
+      <label htmlFor="medication-frequency" className={styles.label}>
+        Frequency:
+      </label>
       <input
         className={styles.inputField}
         type="text"
@@ -231,9 +258,10 @@ const TaoHoSo: React.FC = () => {
         required
       />
       <br />
-      <br />
 
-      <label htmlFor="secret-key">Secret key for encryption:</label>
+      <label htmlFor="secret-key" className={styles.label}>
+        Secret key for encryption:
+      </label>
       <input
         className={styles.inputField}
         type="text"
@@ -244,17 +272,16 @@ const TaoHoSo: React.FC = () => {
         required
       />
       <br />
-      <br />
 
       <span id="message" className={styles.message}>
         {message}
       </span>
       <br />
-      <br />
 
       <button className={styles.submit} type="submit">
         Submit
       </button>
+      <p className={styles["nft-result-value"]}>{ipfsUrl}</p>
     </form>
   );
 };

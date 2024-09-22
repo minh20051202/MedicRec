@@ -3,6 +3,7 @@ import { encryptData } from "../lib/encryptAndDecrypt";
 import { uploadToIPFS } from "../lib/IPFSPinningAndRetrieving";
 export default async function createPatientBundle() {
   const patient = {
+    resourceType: "Patient",
     name: (document.getElementById("patient-name") as HTMLInputElement).value,
     gender: (document.getElementById("patient-gender") as HTMLInputElement)
       .value,
@@ -14,6 +15,7 @@ export default async function createPatientBundle() {
   };
   const patientResource = await FHIR_CLIENT.create("Patient", patient);
   const encounter = {
+    resourceType: "Encounter",
     encounterId: (document.getElementById("encounter-id") as HTMLInputElement)
       .value,
     encounterType: (
@@ -31,6 +33,7 @@ export default async function createPatientBundle() {
   const encounterResource = await FHIR_CLIENT.create("Encounter", encounter);
 
   const observation = {
+    resourceType: "Observation",
     observationId: (
       document.getElementById("observation-id") as HTMLInputElement
     ).value,
@@ -49,6 +52,7 @@ export default async function createPatientBundle() {
     observation
   );
   const coverage = {
+    resourceType: "Coverage",
     coverageId: (document.getElementById("coverage-id") as HTMLInputElement)
       .value,
     coverageType: (document.getElementById("coverage-type") as HTMLInputElement)
@@ -60,8 +64,11 @@ export default async function createPatientBundle() {
       document.getElementById("coverage-payor") as HTMLInputElement
     ).value,
   };
+
   const coverageResource = await FHIR_CLIENT.create("Coverage", coverage);
+
   const medicationStatement = {
+    resourceType: "Medication Statement",
     medicationStatementId: (
       document.getElementById("medicationStatement-id") as HTMLInputElement
     ).value,
@@ -97,5 +104,5 @@ export default async function createPatientBundle() {
 
   const ipfsUrl = await uploadToIPFS("Bundle", encryptedPatientData);
 
-  console.log(ipfsUrl);
+  return ipfsUrl;
 }
